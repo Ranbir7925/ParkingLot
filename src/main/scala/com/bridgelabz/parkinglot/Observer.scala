@@ -1,5 +1,5 @@
 package com.bridgelabz.parkinglot
 
 trait Observer {
-  def parkingStatus(status:String)
+  def parkingStatus(status: String)
 }
