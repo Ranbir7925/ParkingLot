@@ -4,5 +4,6 @@ class ParkingLotException(message: ParkingLotExceptionEnums.Value) extends Excep
   object ParkingLotExceptionEnums extends Enumeration{
     type ParkingLotException = Value
 
-    val CAR_NUMBER_MISMATCH = Value("Car for a given car number is not found")
+    val carNumberMissMatch = Value("Car for a given car number is not found")
+    val parkingFull = Value("Parking is full.")
   }
