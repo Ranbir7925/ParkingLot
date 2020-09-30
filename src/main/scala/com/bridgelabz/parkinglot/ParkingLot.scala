@@ -5,8 +5,8 @@ import java.util
 
  class ParkingLot {
    val capacity :Int = 3
-  var parkingStatus:String = null
-  val parkingList = new util.ArrayList[String]
+   var parkingStatus:String = null
+   val parkingList = new util.ArrayList[String]
 
   def park(carNumber: String) = {
     if (parkingList.contains(carNumber)) {
@@ -16,7 +16,7 @@ import java.util
       parkingList.add(carNumber)
     }
     if (parkingList.size() >= capacity){
-      this.parkingStatus = ParkingStatus.PARKING_FULL.toString
+      this.parkingStatus = ParkingStatus.parkingFull.toString
       this.informOwner
       this.informAirportSecurity
     }
@@ -25,12 +25,15 @@ import java.util
      parkingList.contains(carNumber)
    }
 
-  def unPark(carNumber: String): Boolean = {
+  def unPark(carNumber: String): Unit = {
     if (!parkingList.contains(carNumber)){
       throw new ParkingLotException(ParkingLotExceptionEnums.carNumberMissMatch)
     }
     parkingList.remove(carNumber)
-    !parkingList.contains(carNumber)
+    if(parkingList.size() < capacity){
+      this.parkingStatus = ParkingStatus.parkingAvailable.toString
+      this.informOwner
+    }
   }
 
    def informOwner: String ={
