@@ -1,5 +1,9 @@
 package com.bridgelabz.parkinglot
 
+/**
+ * Custom Exception
+ * @param message
+ */
 class ParkingLotException(message: ParkingLotExceptionEnums.Value) extends Exception(message.toString) {}
 
 object ParkingLotExceptionEnums extends Enumeration {

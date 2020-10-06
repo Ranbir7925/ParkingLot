@@ -1,9 +1,9 @@
 package com.bridgelabz.parkinglot
 
-class AirportSecurity extends Observer {
+class AirportSecurity extends   {
   var status: String = null
 
-  override def parkingStatus(status: String): Unit = {
+   def parkingStatus(status: String): Unit = {
     this.status = status
   }
 }

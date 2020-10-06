@@ -1,5 +1,8 @@
 package com.bridgelabz.parkinglot
 
+/**
+ * Different types of status defined here
+ */
 object ParkingStatus extends Enumeration {
   type ParkingStatus = Value
 
